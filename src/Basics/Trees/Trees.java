@@ -17,9 +17,33 @@ public class Trees {
     public Trees() {
         root = null;
     }
+    public void insert(int val) {
+        root=insertrecursive(root, val);
+    }
+    private TreeNode insertrecursive(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+        if(root.val < val) {
+            root.right=insertrecursive(root.right, val);
+        }
+        else if(root.val > val) {
+            root.left=insertrecursive(root.left, val);
+        }
+        return root;
+    }
 
+    public void display(){
+        displaytree(root);
+        System.out.println();
+    }
 
-    public static void main(String[] args) {
-
+    private void displaytree(TreeNode root){
+        if(root==null){
+            return;
+        }
+        displaytree(root.left);
+        System.out.print(root.val + " ");
+        displaytree(root.right);
     }
 }
