@@ -89,6 +89,21 @@ public class Trees {
             return (Math.max(depthrecursive(root.left), depthrecursive(root.right)))+1;
         }
 
+            //Find minimum in a BST;
+            public int minval(){
+                return recursiveminval(root);
+            }
+            private int recursiveminval(TreeNode root){
+            if(root==null) {
+                return 0;
+            }
+                int c=0;
+           while(root.left!=null){
+               c=root.left.val;
+               root.left=root.left.left;
+           }
+           return c;
+    }
 
 
 }

@@ -14,6 +14,7 @@ public class main {
 
         t.count();
         //System.out.println(t.count());
-        System.out.println(t.depth());
+        //System.out.println(t.depth());
+        System.out.println(t.minval());
     }
 }
