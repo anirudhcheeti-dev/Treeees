@@ -67,14 +67,28 @@ public class Trees {
             }
                 return searchrecursive(root.left, val);
         }
+            //Total count of the tree
+            public int count(){
+                return countrecursive(root);
+            }
+            private int countrecursive(TreeNode root){
+            if(root==null){
+                return 0;
+            }
+            return countrecursive(root.left) + countrecursive(root.right) + 1;
+            }
 
-        public int count(){
-            return countrecursive(root);
+            //The height of the TREE
+            public int depth(){
+                return depthrecursive(root);
+            }
+            private int depthrecursive(TreeNode root){
+            if(root==null){
+                return 0;
+            }
+            return (Math.max(depthrecursive(root.left), depthrecursive(root.right)))+1;
         }
-        private int countrecursive(TreeNode root){
-        if(root==null){
-            return 0;
-        }
-        return countrecursive(root.left) + countrecursive(root.right) + 1;
-        }
+
+
+
 }
