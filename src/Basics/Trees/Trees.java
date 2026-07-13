@@ -1,5 +1,7 @@
 package Basics.Trees;
 
+import com.sun.source.tree.Tree;
+
 public class Trees {
     private static class TreeNode {
         int val;
@@ -115,7 +117,7 @@ public class Trees {
         return sumrecursive(root.left) + sumrecursive(root.right) + root.val;
         }
 
-        //
+        //Maxvalue in TREE
         public int maxvalue(){
             return maxvaluerecursive(root);
         }
@@ -124,11 +126,35 @@ public class Trees {
         if(root==null){
             return 0;
         }
-        int c=0;
-        while(root.right!=null){
-            c=root.right.val;
-            root.right=root.right.right;
+        if(root.right==null){
+            return root.val;
         }
-        return c;
+        return  maxvaluerecursive(root.right);
+        }
+
+        public void delete(int val){
+            recursivedelete(root, val);
+        }
+        private TreeNode recursivedelete(TreeNode root, int val){
+        if(root==null){
+            return null;
+        }
+        if(root.val>val) {
+           root.left= recursivedelete(root.left, val);
+        }
+        else if(root.val<val) {
+            root.right= recursivedelete(root.right, val);
+        }
+        else{
+            if(root.left==null){
+                return root.right;
+            }
+            if(root.right==null){
+                return root.left;
+            }
+            root.val=recursiveminval(root.right);
+            root.right=recursivedelete(root.right, root.val);
+        }
+        return root;
         }
 }
