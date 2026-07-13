@@ -114,4 +114,21 @@ public class Trees {
         }
         return sumrecursive(root.left) + sumrecursive(root.right) + root.val;
         }
+
+        //
+        public int maxvalue(){
+            return maxvaluerecursive(root);
+        }
+
+        private int maxvaluerecursive(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int c=0;
+        while(root.right!=null){
+            c=root.right.val;
+            root.right=root.right.right;
+        }
+        return c;
+        }
 }

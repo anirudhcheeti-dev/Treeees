@@ -16,6 +16,7 @@ public class main {
         //System.out.println(t.count());
         //System.out.println(t.depth());
         //System.out.println(t.minval());
-        System.out.println(t.sum());
+        //System.out.println(t.sum());
+        System.out.println(t.maxvalue());
     }
 }
