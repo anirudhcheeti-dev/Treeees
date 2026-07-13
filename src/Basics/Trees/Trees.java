@@ -105,5 +105,13 @@ public class Trees {
            return c;
     }
 
-
+        public int sum(){
+            return sumrecursive(root);
+        }
+        private int sumrecursive(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return sumrecursive(root.left) + sumrecursive(root.right) + root.val;
+        }
 }
