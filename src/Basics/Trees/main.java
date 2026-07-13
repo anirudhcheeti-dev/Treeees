@@ -9,7 +9,8 @@ public class main {
         t.insert(6);
         t.insert(9);
         t.insert(0);
-
-        t.display();
+        t.insert(1);
+        t.insert(2);
+        System.out.println("Is 9 in the tree? " + t.search(11));
     }
 }

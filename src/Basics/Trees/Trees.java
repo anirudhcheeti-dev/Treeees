@@ -46,4 +46,20 @@ public class Trees {
         System.out.print(root.val + " ");
         displaytree(root.right);
     }
+
+    public boolean search(int val){
+        return searchrecursive(root, val);
+    }
+    private boolean searchrecursive(TreeNode root, int val){
+        if(root==null){
+            return false;
+        }
+        if(root.val == val){
+            return true;
+        }
+        if(root.val<val) {
+            return searchrecursive(root.right, val);
+        }
+            return searchrecursive(root.left, val);
+    }
 }
