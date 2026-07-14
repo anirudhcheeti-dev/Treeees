@@ -157,4 +157,22 @@ public class Trees {
         }
         return root;
         }
+
+        public void identical(){
+            TreeNode p=root;
+            TreeNode q=root;
+            identicalrecursive(p,q);
+        }
+        private boolean identicalrecursive(TreeNode p,TreeNode q){
+        if(p==null && q==null){
+            return true;
+        }
+        if(p==null || q==null){
+            return false;
+        }
+        if(p.val != q.val){
+            return false;
+        }
+        return identicalrecursive(p.left, q.left) && identicalrecursive(p.right, q.right);
+        }
 }

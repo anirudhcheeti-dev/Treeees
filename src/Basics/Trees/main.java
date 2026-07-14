@@ -17,8 +17,8 @@ public class main {
 //        System.out.println(t.minval());
 //        System.out.println(t.sum());
 //        System.out.println(t.maxvalue());
-
-         t.delete(2);
-         t.display();
+        t.identical();
+//         t.delete(2);
+//         t.display();
     }
 }
