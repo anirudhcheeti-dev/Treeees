@@ -189,5 +189,24 @@ public class Trees {
             }
             int remain=targetSum-root.val;
            return hasPathSum(root.left,remain)||hasPathSum(root.right,remain);
+        }
+
+    public void flatten(TreeNode root) {
+            if(root==null){
+                return;
+            }
+
+        TreeNode temp=root.right;
+        flatten(root.left);
+        flatten(temp);
+        root.right=root.left;
+        TreeNode temp2=root;
+        while(temp2.right!=null){
+            temp2=temp2.right;
+        }
+        temp2.right=temp;
+        //root.right=temp;
+        root.left=null;
+
     }
 }
