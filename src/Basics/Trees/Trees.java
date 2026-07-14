@@ -175,4 +175,19 @@ public class Trees {
         }
         return identicalrecursive(p.left, q.left) && identicalrecursive(p.right, q.right);
         }
+
+        public boolean Pathsum(){
+            int target=22;
+            return hasPathSum(root,target);
+        }
+        private boolean hasPathSum(TreeNode root, int targetSum) {
+            if(root==null){
+                return false;
+            }
+            if(root.left==null && root.right==null){
+                return root.val == targetSum;
+            }
+            int remain=targetSum-root.val;
+           return hasPathSum(root.left,remain)||hasPathSum(root.right,remain);
+    }
 }
