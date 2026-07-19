@@ -207,6 +207,7 @@ public class Trees {
         temp2.right=temp;
         //root.right=temp;
         root.left=null;
-
     }
+
+
 }
